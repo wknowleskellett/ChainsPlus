@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "lettas.chains_link.mixin.client",
+	"compatibilityLevel": "JAVA_8",
+	"client": [
+		"ChainsLinkClientMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
