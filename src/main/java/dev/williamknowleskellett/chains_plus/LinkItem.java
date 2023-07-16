@@ -18,13 +18,13 @@ public class LinkItem extends BlockItem {
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
-        ChainsPlusMod.LOGGER.info("link used on block");
         World world = context.getWorld();
         BlockPos blockPos = context.getBlockPos();
         BlockPos oppPos = blockPos.offset(context.getSide());
         BlockState blockState = world.getBlockState(oppPos);
 
-        if (blockState.isOf(ChainsPlusMod.LINK_BLOCK) && !LinkBlock.hasSide(blockState, context.getSide().getOpposite())) {
+        if (blockState.isOf(ChainsPlusMod.LINK_BLOCK)
+                && !LinkBlock.hasSide(blockState, context.getSide().getOpposite())) {
             ChainsPlusMod.LOGGER.info("link used on link valid side");
             world.playSound(context.getPlayer(), oppPos, SoundEvents.BLOCK_CHAIN_PLACE, SoundCategory.BLOCKS, 1.0F,
                     1.0F);

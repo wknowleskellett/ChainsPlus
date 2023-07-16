@@ -20,8 +20,11 @@ public class ChainsPlusMod implements ModInitializer {
 	public static final Logger LOGGER = LogManager.getLogger(ID);
 	public static boolean isLanternGravity = true;
 
-	public static final LinkBlock LINK_BLOCK = Registry.register(Registry.BLOCK, new Identifier(ID, "link"), new LinkBlock(Settings.of(Material.METAL, MapColor.CLEAR).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.CHAIN).nonOpaque()));
-	public static final LinkItem LINK_ITEM = Registry.register(Registry.ITEM, new Identifier(ID, "link"), new LinkItem(LINK_BLOCK, new Item.Settings().group(ItemGroup.DECORATIONS)));
+	public static final LinkBlock LINK_BLOCK = Registry.register(Registry.BLOCK, new Identifier(ID, "link"),
+			new LinkBlock(Settings.of(Material.METAL, MapColor.CLEAR).requiresTool().strength(5.0F, 6.0F)
+					.sounds(BlockSoundGroup.CHAIN).nonOpaque()));
+	public static final LinkItem LINK_ITEM = Registry.register(Registry.ITEM, new Identifier(ID, "link"),
+			new LinkItem(LINK_BLOCK, new Item.Settings().group(ItemGroup.DECORATIONS)));
 
 	@Override
 	public void onInitialize() {

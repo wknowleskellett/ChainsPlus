@@ -53,16 +53,17 @@ public abstract class PistonHandlerMixin {
         dirArgument = this.motionDirection;
     }
 
-    @Inject(method = "tryMoveAdjacentBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/piston/PistonHandler;isAdjacentBlockStuck(Lnet/minecraft/block/BlockState;Lnet/minecraft/block/BlockState;)Z"),
-            locals = LocalCapture.CAPTURE_FAILHARD)
+    @Inject(method = "tryMoveAdjacentBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/piston/PistonHandler;isAdjacentBlockStuck(Lnet/minecraft/block/BlockState;Lnet/minecraft/block/BlockState;)Z"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void canMoveAdjacentBlockArgumentCapture(BlockPos pos,
             CallbackInfoReturnable<Boolean> cir,
-            BlockState blockState, Direction[] var3, int var4, int var5, Direction direction, BlockPos blockPos, BlockState blockState2) {
+            BlockState blockState, Direction[] var3, int var4, int var5, Direction direction, BlockPos blockPos,
+            BlockState blockState2) {
         dirArgument = direction;
     }
 
     @Inject(method = "isAdjacentBlockStuck", at = @At(value = "HEAD"), cancellable = true)
-    private static void isAdjacentBlockStuckInjection(BlockState blockState1, BlockState blockState2, CallbackInfoReturnable<Boolean> cir) {
+    private static void isAdjacentBlockStuckInjection(BlockState blockState1, BlockState blockState2,
+            CallbackInfoReturnable<Boolean> cir) {
 
         if (blockState2.isOf(ChainsPlusMod.LINK_BLOCK)
                 && !LinkBlock.hasSide(blockState2, dirArgument)) {

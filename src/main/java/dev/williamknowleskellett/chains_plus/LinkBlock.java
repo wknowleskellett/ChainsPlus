@@ -119,13 +119,14 @@ public class LinkBlock extends PillarBlock implements Waterloggable {
         return ActionResult.FAIL;
     }
 
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if ((Boolean)state.get(WATERLOGGED)) {
-           world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState,
+            WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if ((Boolean) state.get(WATERLOGGED)) {
+            world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-  
+
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
-     }
+    }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(WATERLOGGED, EDIT_DOWN, EDIT_UP, EDIT_NORTH, EDIT_SOUTH, EDIT_WEST, EDIT_EAST, AXIS);
@@ -160,8 +161,7 @@ public class LinkBlock extends PillarBlock implements Waterloggable {
     public static ActionResult addDir(BlockState state, World world, BlockPos pos, Direction side) {
         if (hasSide(state, side))
             return ActionResult.FAIL;
-        ChainsPlusMod.LOGGER.info("addDir "+side);
-        
+
         switch (side) {
             case DOWN:
                 world.setBlockState(pos, state.with(EDIT_DOWN, !state.get(EDIT_DOWN)));
@@ -192,7 +192,7 @@ public class LinkBlock extends PillarBlock implements Waterloggable {
         double z = hitPos.getZ();
 
         BooleanProperty editDirection = null;
-        
+
         if (y < 6.5 / 16 && hasSide(state, Direction.DOWN)) {
             editDirection = EDIT_DOWN;
         } else if (y > 9.5 / 16 && hasSide(state, Direction.UP)) {

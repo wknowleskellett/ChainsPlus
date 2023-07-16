@@ -16,22 +16,19 @@ import dev.williamknowleskellett.chains_plus.ChainsPlusMod;
 
 @Mixin(LanternBlock.class)
 public class LanternBlockMixin extends Block implements Waterloggable {
-    @Shadow public static final BooleanProperty HANGING;
+    @Shadow
+    public static final BooleanProperty HANGING;
 
     public LanternBlockMixin(Settings settings) {
         super(settings);
     }
 
-    @Inject(at = @At("RETURN"),
-            method = "getPistonBehavior(Lnet/minecraft/block/BlockState;)Lnet/minecraft/block/piston/PistonBehavior;",
-            cancellable = true)
+    @Inject(at = @At("RETURN"), method = "getPistonBehavior(Lnet/minecraft/block/BlockState;)Lnet/minecraft/block/piston/PistonBehavior;", cancellable = true)
     public void getPistonBehavior(BlockState state, CallbackInfoReturnable<PistonBehavior> cir) {
         cir.setReturnValue(PistonBehavior.NORMAL);
     }
 
-    @Inject(at = @At("HEAD"),
-            method = "canPlaceAt(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z",
-            cancellable = true)
+    @Inject(at = @At("HEAD"), method = "canPlaceAt(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z", cancellable = true)
     public void canPlaceAt(BlockState state, WorldView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         if (!ChainsPlusMod.isLanternGravity)
             cir.setReturnValue(true);
