@@ -24,8 +24,8 @@
 		"chains_plus.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.7.4",
-		"minecraft": "1.17.0",
+		"fabricloader": ">=0.14.21",
+		"minecraft": "1.17.1",
 		"fabric": "*"
 	},
 	"suggests": {
