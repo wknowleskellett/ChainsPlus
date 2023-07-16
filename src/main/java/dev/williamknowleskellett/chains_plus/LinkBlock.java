@@ -32,7 +32,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.RayTraceContext;
+import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
@@ -105,14 +105,14 @@ public class LinkBlock extends PillarBlock implements Waterloggable {
             return ActionResult.FAIL;
         }
         if (item == Items.SHEARS) {
-            HitResult hitResult = world.rayTrace(new RayTraceContext(player.getCameraPosVec(1.0F),
+            HitResult hitResult = world.raycast(new RaycastContext(player.getCameraPosVec(1.0F),
                     player.getCameraPosVec(1.0F)
                             .add((double) (MathHelper.sin(-player.yaw * 0.017453292F - 3.1415927F)
                                     * -MathHelper.cos(-player.pitch * 0.017453292F)) * 5.0D,
                                     (double) (MathHelper.sin(-player.pitch * 0.017453292F)) * 5.0D,
                                     (double) (MathHelper.cos(-player.yaw * 0.017453292F - 3.1415927F)
                                             * -MathHelper.cos(-player.pitch * 0.017453292F)) * 5.0D),
-                    RayTraceContext.ShapeType.OUTLINE, RayTraceContext.FluidHandling.SOURCE_ONLY, player));
+                    RaycastContext.ShapeType.OUTLINE, RaycastContext.FluidHandling.SOURCE_ONLY, player));
             Vec3d hitPos = hitResult.getPos().subtract(pos.getX(), pos.getY(), pos.getZ());
             return removeDir(state, world, pos, player, hitPos);
         }
