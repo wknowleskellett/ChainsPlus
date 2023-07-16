@@ -107,11 +107,11 @@ public class LinkBlock extends PillarBlock implements Waterloggable {
         if (item == Items.SHEARS) {
             HitResult hitResult = world.raycast(new RaycastContext(player.getCameraPosVec(1.0F),
                     player.getCameraPosVec(1.0F)
-                            .add((double) (MathHelper.sin(-player.yaw * 0.017453292F - 3.1415927F)
-                                    * -MathHelper.cos(-player.pitch * 0.017453292F)) * 5.0D,
-                                    (double) (MathHelper.sin(-player.pitch * 0.017453292F)) * 5.0D,
-                                    (double) (MathHelper.cos(-player.yaw * 0.017453292F - 3.1415927F)
-                                            * -MathHelper.cos(-player.pitch * 0.017453292F)) * 5.0D),
+                            .add((double) (MathHelper.sin(-player.getYaw() * 0.017453292F - 3.1415927F)
+                                    * -MathHelper.cos(-player.getPitch() * 0.017453292F)) * 5.0D,
+                                    (double) (MathHelper.sin(-player.getPitch() * 0.017453292F)) * 5.0D,
+                                    (double) (MathHelper.cos(-player.getYaw() * 0.017453292F - 3.1415927F)
+                                            * -MathHelper.cos(-player.getPitch() * 0.017453292F)) * 5.0D),
                     RaycastContext.ShapeType.OUTLINE, RaycastContext.FluidHandling.SOURCE_ONLY, player));
             Vec3d hitPos = hitResult.getPos().subtract(pos.getX(), pos.getY(), pos.getZ());
             return removeDir(state, world, pos, player, hitPos);
