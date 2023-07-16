@@ -1,7 +1,7 @@
 {
 	"required": true,
 	"package": "dev.williamknowleskellett.chains_plus.mixin",
-	"compatibilityLevel": "JAVA_8",
+	"compatibilityLevel": "JAVA_16",
 	"mixins": [
 		"LanternBlockMixin",
 		"PistonHandlerMixin"
