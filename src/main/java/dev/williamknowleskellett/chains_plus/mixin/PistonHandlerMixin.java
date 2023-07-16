@@ -67,7 +67,7 @@ public abstract class PistonHandlerMixin {
         dirArgument = this.motionDirection;
     }
 
-    @Inject(method = "canMoveAdjacentBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/piston/PistonHandler;isAdjacentBlockStuck(Lnet/minecraft/block/Block;Lnet/minecraft/block/Block;)Z"),
+    @Inject(method = "tryMoveAdjacentBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/piston/PistonHandler;isAdjacentBlockStuck(Lnet/minecraft/block/Block;Lnet/minecraft/block/Block;)Z"),
             locals = LocalCapture.CAPTURE_FAILHARD)
     private void canMoveAdjacentBlockArgumentCapture(BlockPos pos,
             CallbackInfoReturnable<Boolean> cir,

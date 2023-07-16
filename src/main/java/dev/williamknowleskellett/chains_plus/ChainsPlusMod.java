@@ -6,8 +6,8 @@ import org.apache.logging.log4j.Logger;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.block.AbstractBlock.Settings;
+import net.minecraft.block.MapColor;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -20,7 +20,7 @@ public class ChainsPlusMod implements ModInitializer {
 	public static final Logger LOGGER = LogManager.getLogger(ID);
 	public static boolean isLanternGravity = true;
 
-	public static final LinkBlock LINK_BLOCK = Registry.register(Registry.BLOCK, new Identifier(ID, "link"), new LinkBlock(Settings.of(Material.METAL, MaterialColor.CLEAR).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.CHAIN).nonOpaque()));
+	public static final LinkBlock LINK_BLOCK = Registry.register(Registry.BLOCK, new Identifier(ID, "link"), new LinkBlock(Settings.of(Material.METAL, MapColor.CLEAR).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.CHAIN).nonOpaque()));
 	public static final LinkItem LINK_ITEM = Registry.register(Registry.ITEM, new Identifier(ID, "link"), new LinkItem(LINK_BLOCK, new Item.Settings().group(ItemGroup.DECORATIONS)));
 
 	@Override
