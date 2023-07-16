@@ -119,14 +119,13 @@ public class LinkBlock extends PillarBlock implements Waterloggable {
         return ActionResult.FAIL;
     }
 
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState,
-            WorldAccess world, BlockPos pos, BlockPos posFrom) {
-        if ((Boolean) state.get(WATERLOGGED)) {
-            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if ((Boolean)state.get(WATERLOGGED)) {
+           world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-
-        return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
-    }
+  
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(WATERLOGGED, EDIT_DOWN, EDIT_UP, EDIT_NORTH, EDIT_SOUTH, EDIT_WEST, EDIT_EAST, AXIS);
