@@ -29,7 +29,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Direction.Axis;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
@@ -99,9 +98,6 @@ public class LinkBlock extends PillarBlock implements Waterloggable {
         ItemStack itemStack = player.getStackInHand(hand);
         Item item = itemStack.getItem();
         if (item == ChainsPlusMod.LINK_ITEM) {
-            // ChainsPlusMod.LOGGER.info("LinkBlock::onUse() on " + hit.getSide() + " which does"
-            //         + (!hasSide(state, hit.getSide()) ? "n't" : "") + " have a link");
-            // world.getBlockState(pos.offset(hit.getSide()));
             if (state.getBlock() == ChainsPlusMod.LINK_BLOCK && !hasSide(state, hit.getSide())) {
                 world.playSound(player, pos, SoundEvents.BLOCK_CHAIN_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 return addDir(state, world, pos, hit.getSide());
@@ -197,7 +193,7 @@ public class LinkBlock extends PillarBlock implements Waterloggable {
         double z = hitPos.getZ();
 
         BooleanProperty editDirection = null;
-        // if (!hasSide(state, ))
+        
         if (y < 6.5 / 16 && hasSide(state, Direction.DOWN)) {
             editDirection = EDIT_DOWN;
         } else if (y > 9.5 / 16 && hasSide(state, Direction.UP)) {
