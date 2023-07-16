@@ -1,12 +1,10 @@
 {
 	"required": true,
-	"package": "lettas.chains_link.mixin",
+	"package": "dev.williamknowleskellett.chains_plus.mixin",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
-		"clMixinChainBlock",
-		"clMixinItems",
-		"clMixinLanternBlock",
-		"clMixinPistonHandler"
+		"LanternBlockMixin",
+		"PistonHandlerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

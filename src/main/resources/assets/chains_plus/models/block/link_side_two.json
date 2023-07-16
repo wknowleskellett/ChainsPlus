@@ -1,8 +1,8 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "block/chain",
-    "all": "block/chain"
+    "particle": "chains_plus:block/link",
+    "all": "chains_plus:block/link"
   },
   "elements": [
     {

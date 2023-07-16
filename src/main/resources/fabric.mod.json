@@ -2,25 +2,26 @@
 	"schemaVersion": 1,
 	"id": "chains",
 	"version": "${version}",
-	"name": "Chains-Link",
+	"name": "ChainsPlus",
 	"description": "Small mod that gives chains sticky properties when interacting with pistons",
 	"authors": [
-		"Lettas"
+		"Lettas",
+		"William Knowles-Kellett"
 	],
 	"contact": {
-		"homepage": "https://www.curseforge.com/minecraft/mc-mods/chains-link",
-		"sources": "https://github.com/ajknowles11/chains-link"
+		"homepage": "https://williamknowleskellett.dev/",
+		"sources": "https://github.com/wknowleskellett/ChainsPlus"
 	},
 	"license": "MIT",
-	"icon": "assets/chains_link/icon.png",
+	"icon": "assets/chains_plus/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"lettas.chains_link.chains"
+			"dev.williamknowleskellett.chains_plus.ChainsPlusMod"
 		]
 	},
 	"mixins": [
-		"chains_link.mixins.json"
+		"chains_plus.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.7.4",

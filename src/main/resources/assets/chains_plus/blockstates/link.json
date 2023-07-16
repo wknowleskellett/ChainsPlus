@@ -5,7 +5,7 @@
         "axis": "y"
       },
       "apply": {
-      "model": "block/chain_center"
+      "model": "chains_plus:block/link_center"
       }
     },
     {
@@ -13,7 +13,7 @@
         "axis": "x"
       },
       "apply": {
-        "model": "block/chain_center",
+        "model": "chains_plus:block/link_center",
         "x": 90,
         "y": 90
       }
@@ -23,7 +23,7 @@
         "axis": "z"
       },
       "apply": {
-        "model": "block/chain_center",
+        "model": "chains_plus:block/link_center",
         "x": 90
       }
     },
@@ -33,7 +33,7 @@
         "edit_down": "true"
       },
       "apply": {
-        "model": "block/chain_side_one",
+        "model": "chains_plus:block/link_side_one",
         "uvlock": false
       }
     },
@@ -43,7 +43,7 @@
         "edit_down": "false"
       },
       "apply": {
-        "model": "block/chain_side_one",
+        "model": "chains_plus:block/link_side_one",
         "uvlock": false
       }
     },
@@ -53,7 +53,7 @@
         "edit_down": "true"
       },
       "apply": {
-        "model": "block/chain_side_one",
+        "model": "chains_plus:block/link_side_one",
         "uvlock": false
       }
     },
@@ -63,7 +63,7 @@
         "edit_up": "true"
       },
       "apply": {
-        "model": "block/chain_side_two",
+        "model": "chains_plus:block/link_side_two",
         "uvlock": false
       }
     },
@@ -73,7 +73,7 @@
         "edit_up": "false"
       },
       "apply": {
-        "model": "block/chain_side_two",
+        "model": "chains_plus:block/link_side_two",
         "uvlock": false
       }
     },
@@ -83,7 +83,7 @@
         "edit_up": "true"
       },
       "apply": {
-        "model": "block/chain_side_two",
+        "model": "chains_plus:block/link_side_two",
         "uvlock": false
       }
     },
@@ -93,7 +93,7 @@
         "edit_north": "true"
       },
       "apply": {
-        "model": "block/chain_side_two",
+        "model": "chains_plus:block/link_side_two",
         "x": 90,
         "uvlock": false
       }
@@ -104,7 +104,7 @@
         "edit_north": "true"
       },
       "apply": {
-        "model": "block/chain_side_two",
+        "model": "chains_plus:block/link_side_two",
         "x": 90,
         "uvlock": false
       }
@@ -115,7 +115,7 @@
         "edit_north": "false"
       },
       "apply": {
-        "model": "block/chain_side_two",
+        "model": "chains_plus:block/link_side_two",
         "x": 90,
         "uvlock": false
       }
@@ -126,7 +126,7 @@
         "edit_south": "true"
       },
       "apply": {
-        "model": "block/chain_side_one",
+        "model": "chains_plus:block/link_side_one",
         "x": 90,
         "uvlock": false
       }
@@ -137,7 +137,7 @@
         "edit_south": "true"
       },
       "apply": {
-        "model": "block/chain_side_one",
+        "model": "chains_plus:block/link_side_one",
         "x": 90,
         "uvlock": false
       }
@@ -148,7 +148,7 @@
         "edit_south": "false"
       },
       "apply": {
-        "model": "block/chain_side_one",
+        "model": "chains_plus:block/link_side_one",
         "x": 90,
         "uvlock": false
       }
@@ -159,7 +159,7 @@
         "edit_west": "false"
       },
       "apply": {
-        "model": "block/chain_side_one",
+        "model": "chains_plus:block/link_side_one",
         "x": 90,
         "y": 90,
         "uvlock": false
@@ -171,7 +171,7 @@
         "edit_west": "true"
       },
       "apply": {
-        "model": "block/chain_side_one",
+        "model": "chains_plus:block/link_side_one",
         "x": 90,
         "y": 90,
         "uvlock": false
@@ -183,7 +183,7 @@
         "edit_west": "true"
       },
       "apply": {
-        "model": "block/chain_side_one",
+        "model": "chains_plus:block/link_side_one",
         "x": 90,
         "y": 90,
         "uvlock": false
@@ -195,7 +195,7 @@
         "edit_east": "false"
       },
       "apply": {
-        "model": "block/chain_side_two",
+        "model": "chains_plus:block/link_side_two",
         "x": 90,
         "y": 90,
         "uvlock": false
@@ -207,7 +207,7 @@
         "edit_east": "true"
       },
       "apply": {
-        "model": "block/chain_side_two",
+        "model": "chains_plus:block/link_side_two",
         "x": 90,
         "y": 90,
         "uvlock": false
@@ -219,7 +219,7 @@
         "edit_east": "true"
       },
       "apply": {
-        "model": "block/chain_side_two",
+        "model": "chains_plus:block/link_side_two",
         "x": 90,
         "y": 90,
         "uvlock": false
